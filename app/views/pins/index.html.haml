@@ -1,2 +1,7 @@
-- @pins.each do |pin|
-	%h2= link_to pin.title, pin
+.container
+
+	-if user_signed_in?
+		- @pins.each do |pin|
+			%h2= link_to pin.title, pin
+	-else 
+		%h1 Please Sign in
