@@ -1,12 +1,14 @@
-.container	
-	%h1= @pin.title
-	= image_tag @pin.image.url(:medium)
-	%p= @pin.description
+.container#pin.row
+	.col-md-8.col-md-offset-3
+		.panel.panel-default
+			.panel-body.text-center
+				%h1= @pin.title
+				= image_tag @pin.image.url(:medium)
+				%p= @pin.description
 
-	%p Submitted by
-	= @pin.user.email
-	%br
-
-	= link_to "Back", root_path
-	= link_to "Edit", edit_pin_path
-	= link_to "Delete", pin_path, method: :delete, data: { confirm: "Are you sure?" }
+				%p Submitted by
+				= @pin.user.email
+				%br
+				.btn-group
+					= link_to "Edit", edit_pin_path, class: "btn btn-primary"
+					= link_to "Delete", pin_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger"

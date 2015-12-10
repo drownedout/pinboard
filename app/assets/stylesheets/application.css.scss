@@ -1,2 +1,14 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+/*
+	*= require 'masonry/transitions'
+*/
+
+body {
+	background-color: grey;
+}
+
+.panel-body {
+	border: none;
+	max-width: 100px;
+}
